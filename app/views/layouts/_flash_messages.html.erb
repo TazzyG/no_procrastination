@@ -1,0 +1,16 @@
+<div class="container w-75 p-3">
+  <% flash.each do |type, message| %>
+    <%# Elegant inline mapping replacing your old bootstrap_class_for helper %>
+    <% alert_class = case type
+       when 'notice' then 'alert-success'
+       when 'alert', 'error' then 'alert-danger'
+       else 'alert-info'
+       end %>
+
+    <div class="alert <%= alert_class %> alert-dismissible fade show" role="alert">
+      <%= message %>
+      <%# Updated clean Bootstrap 5 native close button %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  <% end %>
+</div>

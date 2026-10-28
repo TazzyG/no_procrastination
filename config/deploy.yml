@@ -1,0 +1,61 @@
+service: no_procrastination
+image: lauriegloge/no_procrastination
+run_directory: .kamal-deploy
+
+registry:
+  username: lauriegloge
+  password:
+    - KAMAL_REGISTRY_PASSWORD
+
+env:
+  clear:
+    DB_HOST: "172.17.0.1"
+  secret:
+    - RAILS_MASTER_KEY 
+    - DATABASE_URL
+    # - POSTGRES_PASSWORD
+
+  # clear:
+  #   DATABASE_HOST: no_procrastination-db
+  #   POSTGRES_USER: laurie # Updated to match your accessory below
+  #   POSTGRES_DB: no_procrastination_production
+
+builder:
+  arch: amd64
+
+servers:
+  web:
+    hosts:
+      - 137.184.165.247
+    options: 
+      "add-host": "host.docker.internal:host-gateway"
+
+ssh:
+  user: laurie
+  keys: [ ~/.ssh/id_ed25519 ] 
+  
+proxy:
+  ssl: true
+  hosts: 
+    - friendlyroad.com
+    - www.friendlyroad.com
+
+
+
+# Remove accessories because I already have a Postgres database running on the server.
+# accessories:
+#   db:
+#     image: postgres:18
+#     host: 137.184.165.247
+#     port: "127.0.0.1:5432:5432"
+#     env: 
+#       clear:
+#         POSTGRES_USER: laurie
+#         POSTGRES_DB: no_procrastination_production
+#       secret:
+#         - POSTGRES_PASSWORD
+#     directories:
+#       - data:/var/lib/postgresql/data
+
+
+  

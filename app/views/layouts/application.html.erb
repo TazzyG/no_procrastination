@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  
+   <title><%= full_title(yield(:title)) %></title>
+
+    <meta property="og:title" content="Friendly Road">
+    <meta property="og:description" content="A private space to reflect, plan, set intentions, and build momentum on your journey.">
+    <meta property="og:image" content="<%= image_url('fr_thumb2.jpg') %>">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+   
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <!-- Google Fonts Preconnect (Optimized - No Duplicates) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <%= yield :head %>
+  
+    <%# This links your application.scss styles compiled by Dart Sass %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+
+    
+    <%# This brings in your Bootstrap-enabled Importmap JavaScript %>
+    <%= javascript_importmap_tags %>
+
+    <!-- Font Awesome 6 Free Icons CDN -->
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.2/css/all.css" />
+
+
+    <%= favicon_link_tag 'favicon.ico' %>
+  </head>
+
+  <body data-bs-theme="dark">
+   <%= yield %>
+    <%= render 'layouts/flash_messages' %>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+<%= render "pages/journal" %>
+
+<div class="container my-5" data-bs-theme="dark">
+	<div class="row row-cols-1 row-cols-md-3 g-4">
+    <!-- Destination Card -->
+    <div class="col-md-4">
+      <div class="card h-100 border-0 shadow-sm rounded-5p-3">
+        <%= image_tag "scenery/canoemd.jpg", class: "card-img-top rounded-2", alt: "mountaintop" %>
+        <div class="card-body">
+          <h3 class="h5 card-title fw-bold text-light">Set a Destination</h3>
+          <p class="card-text text-muted small">Start with the end in mind and work your way back with iterative questions. How will we know when we've arrived?</p>
+        </div>
+      </div>
+			
+    </div>
+    <!-- Additional section grid blocks collapse structurally below... -->
+
+		<div class="col-md-4">
+      <div class="card h-100 border-0 shadow-sm rounded-5p-3">
+        <%= image_tag "scenery/mountainmd.jpg", class: "card-img-top rounded-2", alt: "canoe looking at fireworks" %>
+        <div class="card-body">
+          <h3 class="h5 card-title fw-bold text-light">Commmit to the Journey</h3>
+          <p class="card-text text-muted small">Here you are, excited or afraid. Are you ready to begin?</p>
+        </div>
+      </div>
+			
+    </div>
+
+		<div class="col-md-4">
+      <div class="card h-100 border-0 shadow-sm rounded-5p-3">
+        <%= image_tag "scenery/hillmd.jpg", class: "card-img-top rounded-2", alt: "Rocky Stairway going up" %>
+        <div class="card-body">
+          <h3 class="h5 card-title fw-bold text-light">The windy path full of challenges</h3>
+          <p class="card-text text-muted small">This is the energy, self sabatoge, breakthroughs, even failures.Where are we at this very moment?</p>
+        </div>
+      </div>
+			
+    </div>
+  </div>
+
+
+
+  <!-- Bento Grid Main Content -->
+  <div class="row g-4">
+    <!-- Column 1: Destination -->
+		
+    <div class="col-md-4">
+		
+      <div class="p-4 rounded-4 bg-body-tertiary h-100 border border-secondary-subtle shadow-sm">
+        <div class="d-flex align-items-center mb-3">
+          <i class="bi bi-compass fs-3 text-primary me-2"></i>
+          <h2 class="h4 mb-0 fw-semibold">Define Some Milestones</h2>
+        </div>
+        <p class="text-muted small">The more we define our milestones, the clearer our path becomes.</p>
+        <!-- Mock Input Placeholder -->
+        <input type="text" class="form-control form-control-sm bg-dark border-secondary text-white" placeholder="+ Add a new milestone...">
+      </div>
+    </div>
+
+    <!-- Column 2: Progress -->
+    <div class="col-md-4">
+      <div class="p-4 rounded-4 bg-body-tertiary h-100 border border-secondary-subtle shadow-sm">
+        <div class="d-flex align-items-center mb-3">
+          <i class="bi bi-signpost-split fs-3 text-success me-2"></i>
+          <h2 class="h4 mb-0 fw-semibold">Progress</h2>
+        </div>
+        <p class="text-muted small">Where are we right this moment in our journey?</p>
+        <div class="progress progress-sm mt-3" style="height: 6px;">
+          <div class="progress-bar bg-success" style="width: 45%"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Column 3: Self Reflection -->
+    <div class="col-md-4">
+      <div class="p-4 rounded-4 bg-body-tertiary h-100 border border-secondary-subtle shadow-sm">
+        <div class="d-flex align-items-center mb-3">
+          <i class="bi bi-journal-text fs-3 text-warning me-2"></i>
+          <h2 class="h4 mb-0 fw-semibold">Reflection & Learning</h2>
+        </div>
+        <p class="text-muted small">Finding the gems in the debris. Sifting through what worked and what didn't.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
