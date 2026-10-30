@@ -1,0 +1,5 @@
+<!-- Apple touch icon - made with ConvertICO.com. Upload the PNG files to the root of your site, then paste this into <head> -->
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<!-- iPhone and iPad also look for /apple-touch-icon.png on their own, so keep that file in the root even without this code. -->
+<!-- Check it afterwards: https://convertico.com/favicon-checker/ -->
