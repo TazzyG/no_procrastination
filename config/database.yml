@@ -3,7 +3,9 @@ default: &default
   encoding: unicode
   max_connections: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   host: localhost
-  # port: 5432
+  port: 5433
+  username: laurie
+  password: <%= ENV.fetch("POST
   
 development:
   <<: *default
