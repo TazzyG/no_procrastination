@@ -4,21 +4,16 @@ default: &default
   max_connections: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   host: localhost
   port: 5432
-  username: laurie
-  password: <%= ENV.fetch("POST
   
 development:
   <<: *default
   database: no_procrastination_development
-  
 
 test:
   <<: *default
   database: no_procrastination_test
 
-
 production:
-
   primary:
     adapter: postgresql
     encoding: unicode
