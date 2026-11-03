@@ -1,24 +1,40 @@
 <%= tag.div(flash[:alert], style: "color:red") if flash[:alert] %>
 <%= tag.div(flash[:notice], style: "color:green") if flash[:notice] %>
-<ssession>
-<form>
- <%= form_with url: session_path do |form| %>
-  <div class="form-group">
-    <label for="AdminInputEmail1">Email address</label>
-    <%= form.email_field :email_address, required: true, autofocus: true, id: "AdminInputEmail"%>
 
+  <div class= "container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-12 col-sm-10 col-md-8 col-lg-5 col-xl-4">
+        <div class="card border-0 shadow-sm rounded-4">
+            <div class="card-body p-4 p-sm-5">
+              
+              <!-- Logo / Header -->
+              <div class="text-center mb-4">
+              
+                <h3 class="fw-bold mb-1">Hello Admin Person!</h3>
+                <p class="text-muted small">Ya gotta sign in to continue!</p>
+              </div>
 
+          
+                <%= form_with url: session_path do |form| %>
+                <form>
+                  <div class="form-floating mb-3">
+                    
+                      <%= form.email_field :email_address, required: true, autofocus: true, id: "AdminInputEmail", type: "email" , class: "form-control rounded-3"%>
+                    
+                    <label for="AdminInputEmail">Email address</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                      
+                      <%= form.password_field :password, required: true, maxlength: 72, id: "AdminInputPassword", class: "form-control rounded-3", type: "password" %>
+              
+                    <label for:"AdminInputPassword1">Password</label>
+                  </div>
+                <%= form.submit "Sign in", class: "btn btn-primary w-100 py-w.5 rounded-3 fw-semibold mb-3", type: "submit" %>          
+              
+                </form>
+                <% end %>
+          </div>
+        
+      </div>
+    </div>
   </div>
-  <div class="form-group">
-  
-    <label for:"AdminInputPassword1">Password</label>
-   
-      <%= form.password_field :password, required: true, maxlength: 72, id: "AdminInputPassword"%>
-  
-  </div>
-
-  <button type="submit" class="btn btn-primary"><%= form.submit "Sign in" %></button>
-  <% end %>
-</form>
-
-
