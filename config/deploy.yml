@@ -10,8 +10,8 @@ registry:
 env:
   clear:
     DB_HOST: "172.17.0.1"
-    RAILS_ENV: production
-    NODE_ENV: production
+    # RAILS_ENV: production
+    # NODE_ENV: production
   secret:
     - RAILS_MASTER_KEY 
     - DATABASE_URL
