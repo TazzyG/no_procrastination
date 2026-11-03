@@ -6,18 +6,19 @@
   <div class="form-group">
     <label for="AdminInputEmail1">Email address</label>
     <%= form.email_field :email_address, required: true, autofocus: true, id: "AdminInputEmail"%>
-    <input type="email" class="form-control" id="AdminInputEmail1" aria-describedby="emailHelp">
+
+
   </div>
   <div class="form-group">
   
     <label for:"AdminInputPassword1">Password</label>
-    <input>
+   
       <%= form.password_field :password, required: true, maxlength: 72, id: "AdminInputPassword"%>
-    </input>>
+  
   </div>
 
   <button type="submit" class="btn btn-primary"><%= form.submit "Sign in" %></button>
-  <%/end %>
+  <% end %>
 </form>
 
 
