@@ -3,17 +3,20 @@ default: &default
   encoding: unicode
   max_connections: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   host: localhost
-  port: 5432
+  # port: 5432
   
 development:
   <<: *default
   database: no_procrastination_development
+  port: 5433
 
 test:
   <<: *default
   database: no_procrastination_test
+  port: 5433
 
 production:
+  port: 5432
   primary:
     adapter: postgresql
     encoding: unicode
