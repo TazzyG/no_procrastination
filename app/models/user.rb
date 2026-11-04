@@ -2,7 +2,7 @@ class User < ApplicationRecord
   has_secure_password
   has_many :sessions, dependent: :destroy
 
-  normalizes :email_address, with: ->(e) { e.strip.downcase }
-  validates :email_address, presence: true, uniqueness: true
-
+  # Ensure the options are properly enclosed in a hash
+  validates :email_address, presence: true, uniqueness: true,
+            inclusion: { in: ["laurie@friendlyroad.com"], message: "is not authorized" }
 end

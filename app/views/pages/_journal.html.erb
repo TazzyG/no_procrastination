@@ -12,7 +12,19 @@
         <p class= "text-white-50 fst-italic lh-base mt-4"> Behind the scenes, I am working on my own methods while building this website as one of my own goals. <br> I wish you all many happy trails. 
         </p>
         <p> <%= image_tag "logo-color.png", class: "img-fluid mb-4 mx-auto logo-subtle" , alt: "Friendlyroad logo" %>
-        </p>   	
+        </p>  
+
+				<p>
+				 	<% if authenticated? %>
+						<div class="alert alert-success">Logged in as: <%= Current.session.user.email_address %></div>
+						<%= button_to "Log Out", session_path, 
+                  method: :delete, 
+                  class: "btn btn-sm btn-outline-danger" %>
+					<% end %>
+					 		
+  					</div>
+				</p>
+
 			</div>
 		</div>
 	</div>

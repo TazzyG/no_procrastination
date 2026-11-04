@@ -1,0 +1,12 @@
+<div class="container mt-5">
+  <div class="jumbotron bg-light p-5 rounded">
+    <h1 class="display-4">Welcome to Your Admin Dashboard! 🚀</h1>
+    <p class="lead">This is your private sandbox to test out Rails 8 features.</p>
+    <hr class="my-4">
+    <p>Use the links below to manage your site data.</p>
+    
+    <div class="list-group col-md-4">
+      <%= link_to "Manage Posts", admin_posts_path, class: "list-group-item list-group-item-action" if defined?(admin_posts_path) %>
+    </div>
+  </div>
+</div>
