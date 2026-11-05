@@ -2,43 +2,38 @@
 <html lang="en">
   <head>
   
-   <title>Track What Matters</title>
+    <title>Track What Matters</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://friendlyroad.com">
     <meta property="og:title" content="Track What Matters">
     <meta property="og:description" content="A private place for keeping track of my progress and collecting records of my journey">
-    <meta property="og:url" content="https://friendlyroad.com">
-    <meta property="og:type" content="website">
     <meta property="og:site_name" content="Friendlyroad.com">
-    <meta property="og:image" content="https://friendlyroad.com/og-preview.png">
+    <meta property="og:image" content="<%= asset_url('og-preview.png') %>">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:alt" content="Starting a journey with ideas and thoughts">
+
+    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta charset="UTF-8" />
-  
+
+    <!-- Icons -->
+    <%= favicon_link_tag 'favicon.ico' %>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-   
-    <!-- Google Fonts Preconnect (Optimized - No Duplicates) -->
+
+    <!-- Google Fonts Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
-    
-  
-  
-    <%# This links your application.scss styles compiled by Dart Sass %>
+
+    <!-- Rails Assets compilation -->
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-
-    
-    <%# This brings in your Bootstrap-enabled Importmap JavaScript %>
     <%= javascript_importmap_tags %>
-
-
-    <%= favicon_link_tag 'favicon.ico' %>
-
-    <script src="https://kit.fontawesome.com/9ff984f83e.js" crossorigin="anonymous"></script>
 
 
   </head>
