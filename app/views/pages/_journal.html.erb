@@ -16,6 +16,7 @@
 						<div class="carousel-inner">
 							
 							<% if @posts.present? %>
+							<h1> There are <%= @posts.count %>  posts </h1>
 								<div class="carousel-item active">
 									<p class= "text-white-50 fst-italic lh-base mt-4"> Behind the scenes, I am working on my own methods while building this website as one of my own goals. <br> I wish you all many happy trails. 
 									</p>
@@ -29,6 +30,7 @@
 									</div>
 								<% end%>
 							<% else %>
+							<h1> There are no posts </h1>
 								<p class= "text-white-50 fst-italic lh-base mt-4"> Behind the scenes, I am working on my own methods while building this website as one of my own goals. <br> I wish you all many happy trails. 
 							<% end %>
 							</div>
