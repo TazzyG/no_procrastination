@@ -5,3 +5,14 @@ import "@popperjs/core"
 import "bootstrap"
 
 import "controllers"
+
+// This forces Bootstrap to re-initialize its components whenever Turbo replaces the page body
+document.addEventListener("turbo:load", () => {
+  const carouselElList = document.querySelectorAll('[data-bs-ride="carousel"]')
+  carouselElList.forEach(carouselEl => {
+    // If it isn't initialized yet, force it to boot
+    if (!bootstrap.Carousel.getInstance(carouselEl)) {
+      new bootstrap.Carousel(carouselEl)
+    }
+  })
+})

@@ -7,8 +7,8 @@ pin "@hotwired/stimulus-loading", to: "stimulus-loading.js"
 
 
 # # Pins local JavaScript compiled by the bootstrap gem instead of an external CDN
-pin "@popperjs/core", to: "@popperjs--core.js" # @2.11.8
-pin "bootstrap" # @5.3.8
+pin "@popperjs/core", to: "@popperjs--core.js", preload:true # @2.11.8
+pin "bootstrap" # @5.3.8, preload:true
 
 
 pin_all_from "app/javascript/controllers", under: "controllers"
