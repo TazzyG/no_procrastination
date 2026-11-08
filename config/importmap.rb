@@ -7,6 +7,9 @@ pin "@hotwired/stimulus-loading", to: "stimulus-loading.js"
 # pin "bootstrap", to: "https://ga.jspm.io/npm:bootstrap@5.3.5/dist/js/bootstrap.esm.js"
 # pin "@popperjs/core", to: "https://unpkg.com/@popperjs/core@2.11.8/dist/esm/index.js"
 # # Pins local JavaScript compiled by the bootstrap gem instead of an external CDN
-pin "@popperjs/core", to: "https://jspm.io"
+# pin "@popperjs/core", to: "https://jspm.io"
 pin "bootstrap", to: "bootstrap.min.js", preload: true
+# pin "bootstrap", to: "bootstrap.min.js"
+pin "@popperjs/core", to: "popper.js" # Essential for carousels, dropdowns, tooltips
+
 pin_all_from "app/javascript/controllers", under: "controllers"
