@@ -18,44 +18,18 @@
 							<p class= "text-white-50 fst-italic lh-base mt-4 item active"> Behind the scenes, I am working on my own methods while building this website as one of my own goals. <br> I wish you all many happy trails. 
 							</p>
 						</div>
-						<div class="carousel-item">
-							<p class= "text-white-50 fst-italic lh-base mt-4 item"> Start with a problem you want to solve </p>
+						<% if @posts.present? %>
+							<% @posts.each do |post| %>
+								<%= post.title %>
+								<%= post.content %>
+							<% end%>
+						<% end %>
 						</div>
-						<div class="carousel-item">
-              <p class= "text-white-50 fst-italic lh-base mt-4 item"> Interesting problems generate friends </p>
-						</div>
-						<div class="carousel-item">
-              <p class= "text-white-50 fst-italic lh-base mt-4 item"> Find a friend Work on something together </p>
-						</div>
-						<div class="carousel-item">
-              <p class= "text-white-50 fst-italic lh-base mt-4 item"> Discover the passion that drives you</p>
-						</div>
-						<div class="carousel-item">	
-              <p class= "text-white-50 fst-italic lh-base mt-4 item">Test, learn, grow to find real value</p>
-						</div>
-						<div class="carousel-item">
-              <p class= "text-white-50 fst-italic lh-base mt-4 item"> Do something!</p>
-						</div>
-						<div class="carousel-item">
-              <p class= "text-white-50 fst-italic lh-base mt-4 item"> Share ideas with friends</p>
-						</div>
-           
           </div>
         </div>
        
         <p> <%= image_tag "logo-color.png", class: "img-fluid mb-4 mx-auto logo-subtle" , alt: "Friendlyroad logo" %>
         </p>  
-
-				<p>
-				 	<% if authenticated? %>
-						<div class="alert alert-success">Logged in as: <%= Current.session.user.email_address %></div>
-						<%= button_to "Log Out", session_path, 
-                  method: :delete, 
-                  class: "btn btn-sm btn-outline-danger" %>
-					<% end %>
-					 		
-  					</div>
-				</p>
 
 			</div>
 		</div>

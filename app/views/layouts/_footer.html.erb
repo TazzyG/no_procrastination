@@ -3,21 +3,28 @@
 		<div class="col-nd-4 d-flex align-items-center">
 			<%= link_to root_path, class: "text-muted text-decoration-none" do %>
 				<i class="fa-solid fa-mug-hot"></i>
-				<span class="text-muted small">© <%= Date.today.year %> Another FriendlyRoad Project</span>
-				 
+				<span class="text-muted small">© <%= Date.today.year %> Another FriendlyRoad Project</span>		 
 			<% end %>
-		<%
-=begin%>
- </div>
+		</div>
 		<div class="col-nd-4 d-flex align-items-center">
+		<% if authenticated? %>
+				<span class="text-muted small">Logged in as: <%= Current.session.user.email_address %></span>
+			<% else %>
 			<%= link_to new_session_path, class: "text-muted text-decoration-none" do %>
 				<i class="fa-solid fa-user" aria-hidden="true"></i>
-				<span class="text-muted small"> Administrator </span>
-				 
+				<span class="text-muted small"> Admin Log In </span>
 			<% end %>
+		<% end %>
 		</div> 
-<%
-=end%>
+
+
+		<div class="col-nd-4 d-flex align-items-right">
+		 	<% if authenticated? %>
+						<%= button_to "Log Out", session_path, 
+                  method: :delete, 
+                  class: "btn btn-sm btn-outline-danger" %>
+					<% end %>
+			</div>
 	</div>
 </footer>
     

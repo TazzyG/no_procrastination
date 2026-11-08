@@ -10,18 +10,26 @@
       </ul>
     </div>
   <% end %>
-
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div>
-    <%= form.label :body, style: "display: block" %>
-    <%= form.textarea :body %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
+  <div class= "container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-12 col-sm-10 col-md-8 col-lg-5 col-xl-4">
+        <div class="card border-0 shadow-sm rounded-4">
+            <div class="card-body p-4 p-sm-5">
+              <form>
+                <div class="form-floating mb-3">
+                  <%= form.text_area :title, class: "form-control rounded-3"  %>
+                  <%= form.label :title %>
+                </div>
+                <div class="form-floating mb-3">
+                  <%= form.textarea :body, class: "form-control rounded-3" %>
+                  <%= form.label :body %>
+                </div>            
+                  <%= form.submit "Submit", class: "btn btn-primary w-100 py-w.5 rounded-3 fw-semibold mb-3", type: "submit" %> 
+                </form>
+            </div>
+          </div>
+        </div>
+      
 <% end %>
+
+      
