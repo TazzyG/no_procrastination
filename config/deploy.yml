@@ -43,6 +43,16 @@ proxy:
     - www.friendlyroad.com
 
 
+# config/deploy.yml
+
+# ... your other configuration settings ...
+
+aliases:
+  console: app exec --reuse -i "bin/rails console"
+  shell: app exec --reuse -i bash
+
+
+
 
 # Remove accessories because I already have a Postgres database running on the server.
 # accessories:
