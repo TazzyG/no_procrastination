@@ -11,4 +11,4 @@ import * as bootstrap from "bootstrap" // Notice the explicit wildcard import
 //       new bootstrap.Carousel(carouselEl)
 //     }
 //   })
-})
+// })
