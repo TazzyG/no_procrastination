@@ -10,7 +10,7 @@
 				<p class="lead mb-4"> This is a personal place to track progress, set intentions, and track what matters. There are no registrations, no logins, and no distractions. Just a private space to reflect, plan, and build momentum.
 				</p>	
 				<% if @posts.present? %>
-					<%= render partial: "pages/carousel", locals: { posts: @posts } %>
+					<%= render partial: "pages/carousel" %>
 					<% else %>
 						<p class="text-white-50 fst-italic lh-base mt-4">
 						<h2 class="fw-bold mb-4 hero__heading">No Posts</h2>
@@ -22,7 +22,7 @@
 
 				<p> <%= image_tag "logo-color.png", class: "img-fluid mb-4 mx-auto logo-subtle" , alt: "Friendlyroad logo" %>
 				</p>  
-
+<%= render partial: "pages/demo_carousell"%>
 			</div>
 		</div>
 	</div>

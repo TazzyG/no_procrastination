@@ -16,7 +16,8 @@ module NoProcrastination
     # Common ones are `templates`, `generators`, or `middleware`, for example.
     config.autoload_lib(ignore: %w[assets tasks])
 
-    Rails.application.config.assets.paths << Rails.root.join("vendor", "javascript")
+    config.assets.paths << Rails.root.join("vendor", "javascript")
+    config.assets.paths << Rails.root.join("app", "assets", "stylesheets")
 
 
     # Configuration for the application, engines, and railties goes here.
