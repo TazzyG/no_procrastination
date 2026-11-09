@@ -9,8 +9,16 @@
 				<h1 class="fw-bold mb-4 hero__heading">Track What Matters</h1>
 				<p class="lead mb-4"> This is a personal place to track progress, set intentions, and track what matters. There are no registrations, no logins, and no distractions. Just a private space to reflect, plan, and build momentum.
 				</p>	
-				
-					<%= render "pages/simplecarousel" %>
+				<% if @posts.present? %>
+					<%= render partial: "pages/carousel", locals: { posts: @posts } %>
+					<% else %>
+						<p class="text-white-50 fst-italic lh-base mt-4">
+						<h2 class="fw-bold mb-4 hero__heading">No Posts</h2>
+							Behind the scenes, I am working on my own methods while building this website as one of my own goals. <br>
+							I wish you all many happy trails.
+						</p>
+					<% end %>
+
 		
 				<p> <%= image_tag "logo-color.png", class: "img-fluid mb-4 mx-auto logo-subtle" , alt: "Friendlyroad logo" %>
 				</p>  

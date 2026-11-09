@@ -2,10 +2,10 @@
 import "@hotwired/turbo-rails"
 
 
-import "bootstrap"
+// import "bootstrap"
 
 import "controllers"
-// import * as bootstrap from "bootstrap" // Notice the explicit wildcard import
+import * as bootstrap from "bootstrap" // Notice the explicit wildcard import
 
 // document.addEventListener("turbo:load", () => {
 //   const carouselElList = document.querySelectorAll('[data-bs-ride="carousel"]')
