@@ -5,7 +5,6 @@ pin "@hotwired/turbo-rails", to: "turbo.min.js"
 pin "@hotwired/stimulus", to: "stimulus.min.js"
 pin "@hotwired/stimulus-loading", to: "stimulus-loading.js"
 
-pin "bootstrap" # @5.3.8
-
 pin_all_from "app/javascript/controllers", under: "controllers"
-pin "@popperjs/core", to: "@popperjs--core.js" # @2.11.8
+pin "@popperjs/core", to: "https://jspm.io" # Or your exact CDN version
+pin "bootstrap", to: "https://jspm.io"
