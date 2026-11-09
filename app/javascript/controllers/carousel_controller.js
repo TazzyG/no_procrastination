@@ -1,31 +1,19 @@
 import { Controller } from "@hotwired/stimulus"
-
-// Connects to data-controller="carousel"
+// import * as bootstrap from "bootstrap" 
 export default class extends Controller {
   connect() {
-    // Import Bootstrap dynamically or globally from your pinned importmaps
-    if (typeof bootstrap !== 'undefined') {
-      this.initializeCarousel()
-    } else {
-      // Fallback if bootstrap isn't loaded globally yet
-      import("bootstrap").then(() => {
-        this.initializeCarousel()
+    // Access window.bootstrap natively
+    if (typeof bootstrap !== "undefined" && bootstrap.Carousel) {
+      this.carousel = new bootstrap.Carousel(this.element, {
+        interval: 5000,
+        ride: "carousel"
       })
+    } else {
+      console.error("Bootstrap script is missing from the global window object.")
     }
-  }
-
-  initializeCarousel() {
-    // Automatically hooks into the HTML element holding `data-controller="carousel"`
-    this.carousel = new bootstrap.Carousel(this.element, {
-      interval: 5000, // 5 seconds per slide
-      ride: "carousel" // Starts cycling immediately upon mounting
-    })
   }
 
   disconnect() {
-    // Clean up the instance when leaving the page to prevent memory leaks
-    if (this.carousel) {
-      this.carousel.dispose()
-    }
+    if (this.carousel) this.carousel.dispose()
   }
 }
