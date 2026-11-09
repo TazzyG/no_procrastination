@@ -1,13 +1,24 @@
-// app/javascript/controllers/carousel_controller.js
 import { Controller } from "@hotwired/stimulus"
-import * as bootstrap from "bootstrap"
 
+// Connects to data-controller="carousel"
 export default class extends Controller {
   connect() {
-    // 'this.element' automatically refers to the HTML element that has data-controller="carousel"
+    // Import Bootstrap dynamically or globally from your pinned importmaps
+    if (typeof bootstrap !== 'undefined') {
+      this.initializeCarousel()
+    } else {
+      // Fallback if bootstrap isn't loaded globally yet
+      import("bootstrap").then(() => {
+        this.initializeCarousel()
+      })
+    }
+  }
+
+  initializeCarousel() {
+    // Automatically hooks into the HTML element holding `data-controller="carousel"`
     this.carousel = new bootstrap.Carousel(this.element, {
-      interval: 2000,
-      touch: false
+      interval: 5000, // 5 seconds per slide
+      ride: "carousel" // Starts cycling immediately upon mounting
     })
   }
 
