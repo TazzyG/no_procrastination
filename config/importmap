@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require_relative "../config/application"
+require "importmap/commands"
+
+pin "@popperjs/core", to: "https://jspm.io" # Or your exact CDN version
+pin "bootstrap", to: "https://jspm.io"
+
+pin_all_from "app/javascript/controllers", under: "controllers"
