@@ -1,10 +1,4 @@
-# Be sure to restart your server when you modify this file.
-
 require "securerandom" # <--- DO NOT MISS THIS LINE
-
-# Define an application-wide content security policy.
-# See the Securing Rails Applications Guide for more information:
-# https://guides.rubyonrails.org/security.html#content-security-policy-header
 
 Rails.application.configure do
   config.content_security_policy do |policy|
@@ -12,13 +6,15 @@ Rails.application.configure do
     policy.font_src    :self, :https, :data
     policy.img_src     :self, :https, :data
     policy.object_src  :none
-    # policy.script_src  :self, :https
-    # policy.script_src :self, :https, :unsafe_eval
-    policy.script_src  :self, :https, :unsafe_inline
+
+    # Dynamically allow unsafe_eval in development, keep it strict in production
+    if Rails.env.development?
+      policy.script_src  :self, :https, :unsafe_inline, :unsafe_eval
+    else
+      policy.script_src  :self, :https, :unsafe_inline
+    end
+
     policy.style_src   :self, :https, :unsafe_inline
-    # policy.style_src   :self, :https
-#     # Specify URI for violation reports
-#     # policy.report_uri "/csp-violation-report-endpoint"
   end
 #
 #   # Generate session nonces for permitted importmap, inline scripts, and inline styles.
