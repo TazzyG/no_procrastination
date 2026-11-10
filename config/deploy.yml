@@ -15,6 +15,9 @@ env:
   secret:
     - RAILS_MASTER_KEY 
     - DATABASE_URL
+    - DIGITALOCEAN_SPACES_KEY_ID
+    - DIGITALOCEANS_SPACES
+
     # - POSTGRES_PASSWORD
 
   # clear:
@@ -50,7 +53,6 @@ proxy:
 aliases:
   console: app exec --reuse -i "bin/rails console"
   shell: app exec --reuse -i bash
-
 
 
 

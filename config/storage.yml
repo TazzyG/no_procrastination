@@ -25,3 +25,12 @@ local:
 #   service: Mirror
 #   primary: local
 #   mirrors: [ amazon, google, microsoft ]
+
+digitalocean:
+  service: Amazon
+  access_key_id: <%= ENV['DIGITALOCEAN_SPACES_KEY_ID'] %> # Your Access Key ID
+  secret_access_key: <%= ENV['DIGITALOCEAN_SPACES_KEY'] %>  # The exact LastPass name you used
+  region: nyc3                                           # Visible from your screenshot
+  bucket: simplicity2021nyc3                             # Visible from your screenshot
+  endpoint: https://digitaloceanspaces.com
+
