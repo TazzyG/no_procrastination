@@ -10,9 +10,10 @@
 				<p class="lead mb-4"> This is a personal place to track progress, set intentions, and track what matters. There are no registrations, no logins, and no distractions. Just a private space to reflect, plan, and build momentum.
 				</p>	
 				<% if @posts.present? %>
-					<%= render partial: "pages/carousel"%>
+					<%= render partial: "pages/carousel" %>
 					<% else %>
 						<p class="text-white-50 fst-italic lh-base mt-4">
+						<h2 class="fw-bold mb-4 hero__heading">No Posts</h2>
 							Behind the scenes, I am working on my own methods while building this website as one of my own goals. <br>
 							I wish you all many happy trails.
 						</p>
@@ -26,5 +27,4 @@
 		</div>
 	</div>
 </header>
-
 

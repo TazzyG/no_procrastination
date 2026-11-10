@@ -34,7 +34,7 @@ a:hover  { color: var(--primary-color); }
 
 // Force the items to register structural block space above the video
 #carouselPosts {
-  display: block;
+  display: flexbox;
   width: 100%;
   min-height: 120px; /* Adjust this to match your tallest text slide */
   position: relative;
