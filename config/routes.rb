@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
     # Add your hobby models/features here as you build them
     resources :posts
+    resources :progress_tracks
+    resources :progress_entries
     # resources :projects
     # resources :tasks
   end
