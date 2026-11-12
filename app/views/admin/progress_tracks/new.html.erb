@@ -1,0 +1,11 @@
+<% content_for :title, "Track Progress" %>
+
+<h1>Upload and Track</h1>
+
+<%= render "form", admin_post: @admin_progress_track %>
+
+<br>
+
+<div>
+  <%= link_to "Back to progress tracks", admin_progress_track_path %>
+</div>

@@ -1,0 +1,39 @@
+<%= form_with(model: admin_progress_track) html: { multipart: true } do |f| %>
+  <% if admin_progress_track.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@form_track.errors.count, "error") %> prohibited this progress_track from being saved:</h2>
+      <ul>
+      <% admin_progress_track.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+ <div class= "container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-12 col-sm-10 col-md-8 col-lg-5 col-xl-4">
+        <div class="card border-0 shadow-sm rounded-4">
+          <div class="card-body p-4 p-sm-5">
+            <form>
+              <div class="form-floating mb-3">
+                <%= f.label :"upload image"%>
+                <%= f.file_field :image, class: "form-control rounded-3"  %>
+                <%= f.hidden_field :image_cache %>
+              </div>
+              <div class="<div class="form-floating mb-3">">
+                <%= f.label :title %><br>
+                <%= f.text_field :title, autofocus: true, class: "form-control rounded-3" , placeholder: "Retina Scan or Hip Flexibilty or Dental Image" %>
+              </div>
+              <div class="form-floating mb3">
+                <%= f.label "max 260 characters like a tweet"%><br />
+                <%= f.text_area :description, autofocus: true, class: "form-control rounded-3" , wrap: "hard", placeholder:  "Tell us about the journey... \n example.. After Atovaquine 3 x 250mg/daily 20mg prednisone... \n example ..Management of ?", :text_area_html => {:maxlength => 260, :size => 300}  %>   
+              </div>                    
+              <%= f.submit "Submit", class: "btn btn-primary w-100 py-w.5 rounded-3 fw-semibold mb-3", type: "submit" %>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+<% end %>
